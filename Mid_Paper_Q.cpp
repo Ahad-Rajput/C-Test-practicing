@@ -11,12 +11,14 @@ protected:
     int account_no;
     float balance;
 public:
-    void withdraw(int amount){
+    Bank_Account(int accno, float bal, string tp) : account_no(accno), balance(bal), type(tp) {}
+    void withdraw(float amount){
         cout << "Enter amount, You want to withdraw : ";
         cin >> amount;
         if (amount < balance)
         {
-            balance = balance - amount;
+            balance -= amount;
+            cout << "Updated Balance : " << balance << endl;
         }
         else
         {
@@ -24,9 +26,10 @@ public:
         }
         
     }
-    void deposit(int amount){
+    void deposit(float amount){
         cout << "Enter amount, You want to deposit : ";
-        balance = balance + amount;
+        balance += amount;
+        cout << "Updated Balance : " << balance << endl;
     }
     void close_Account(){
         type = '\0';
@@ -35,11 +38,13 @@ public:
     }
 };
 
-class Customer : public Bank_Account {
+class Customer {
 private:
     string name;
     int customer_id;
+    Bank_Account* Account;
 public: 
+    Customer(string custname, int custno): name(custname) , customer_id(custno) {}
     void create_account(){
         cout << "Enter Customer's name : ";
         cin.ignore();
