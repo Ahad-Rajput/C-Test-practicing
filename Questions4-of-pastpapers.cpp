@@ -7,9 +7,8 @@ class Student{
 private:
     int rollno;
     float cgpa;
-public:
+public: 
     Student(int rn, float cg) : rollno(rn), cgpa(cg){}
-
     friend ostream& operator<<(ostream& out, const Student& s){
         out << "Roll no. : " << s.rollno << " , CGPA : " << s.cgpa;
         return out;
@@ -18,7 +17,8 @@ public:
 
 int main()
 {
-    Student student(101, 3.75);
-    cout << student << endl;
+    Student std1(10, 3.78), std2(11, 3.05);
+    cout << std1 << endl;
+    cout << std2 << endl;
     return 0;
 }
