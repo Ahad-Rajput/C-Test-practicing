@@ -31,7 +31,7 @@ int main()
     r1.getData();
     r2.getData();
     z = r1 + r2;
-    cout << "--------\n";
+    cout << "----------------\n";
     z.display();
 
     return 0;
