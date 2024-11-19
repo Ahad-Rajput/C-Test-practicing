@@ -4,17 +4,16 @@
 #include <iostream>
 using namespace std;
 
-class Base {
+class Base{
 public:
-    void display() {
-        cout << "Base class display function" << endl;
+    void display(){
+        cout << "Base class is activated." << endl;
     }
 };
-
-class Derived : public Base {
+class Derived : public Base{
 public:
-    void display() {
-        cout << "Derived class display function" << endl;
+    void display(){
+        cout << "Derived class is activated." << endl;
     }
 };
 
